@@ -15,7 +15,7 @@ Briefly, the system:
 - Supervises and composes evidence into introduction, body sections, and conclusion with neutrality.
 - Persists intermediate and final reports safely to support resumption and evaluation.
 
-## 🔍 Key Features
+## Key Features
 
 - **Supervisor–Researcher Multi-Agent Graph**: Coordinated via a stateful directed graph (`agentic_workflow.py`) using LangGraph.  
 - **Iterative, Agentic Retrieval**: Each research agent refines search queries to gather clinically relevant evidence.  
@@ -26,7 +26,7 @@ Briefly, the system:
 ![Workflow overview](./figure.png)  
 *Figure 1: AgenticRAG pipeline overview.*
 
-## 🚀 Quickstart
+## Quickstart
 
 ### 1. Clone and install
 
@@ -117,21 +117,21 @@ The core graph lives in `agentic_workflow.py`. The runner coordinating question 
 - Supervisor/researcher model selection via environment or runtime overrides.  
 - Retrieval behavior (number of queries, depth) via `Configuration` / `RunnableConfig`.
 
-## 🔎 Search Tool
+## Search Tool
 
 Search is implemented in `utils.py`:
 
 - `searxng_search` performs asynchronous retrieval through the SearXNG instance, applies domain filtering (defaulting to Radiopaedia.org), deduplicates results, and formats them for LLM consumption.  
 - Results are integrated into the multi-agent pipeline as structured evidence bundles.
 
-## 🧠 Multi-Agent Architecture
+## Multi-Agent Architecture
 
 Implemented in `agentic_workflow.py`:
 - **Supervisor Agent**: Plans report sections, triggers introduction/conclusion generation, and coordinates research agents.  
 - **Research Agents**: Explore individual diagnostic options, gather evidence iteratively, and produce section content.  
 - State transitions and continuation logic are managed with `StateGraph` and conditional edges.
 
-## 🗂 File Overview
+## File Overview
 
 - `agentic_workflow.py` – Core multi-agent graph and tool orchestration.  
 - `runner.py` – Drives batch processing and report persistence.  
@@ -142,7 +142,7 @@ Implemented in `agentic_workflow.py`:
 - `persistence.py` – NDJSON handling and consolidation.  
 - `langgraph.json` – Graph manifest / entrypoint.
 
-## 🧩 Model Integration
+## Model Integration
 
 Supported model prefixes (via `utils.init_chat_model`):
 - `openai:` – OpenAI (requires `OPENAI_API_KEY`).  
@@ -152,7 +152,7 @@ Supported model prefixes (via `utils.init_chat_model`):
 
 Ensure the selected models support tool/function calling; structured output generation depends on it.
 
-## 📘 Paper / Context
+## Paper / Context
 
 This repository implements the system described in:
 
@@ -174,6 +174,6 @@ If you use this repository, please also cite the related work:
 }
 ```
 
-## 📜 License
+## License
 
 MIT License. See `LICENSE` for details.
