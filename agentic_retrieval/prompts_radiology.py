@@ -57,10 +57,7 @@ You are a researcher responsible for completing a specific section of a report. 
 {section_description}
 </Section Description>
 
-2. **Strategic Research Process**  
-   You need to base your research on the following websites only: "statpearls.com", "medscape.com", "emedicine.medscape.com", "uptodate.com", 
-                                        "medical.uworld.com", "boardvitals.com".
-                                       
+2. **Strategic Research Process**                                        
    Follow this precise research strategy:
    a) **Option-Only Query**:  
       1. Craft a query using **2–3 keywords** that define the core concept of the current option (e.g., disease name or key term).  
