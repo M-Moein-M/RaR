@@ -1,3 +1,5 @@
+# Adapted from LangChain (MIT License) – see LICENSE.langchain
+
 from typing import List, Annotated, TypedDict, Literal
 import operator
 from pydantic import BaseModel, Field

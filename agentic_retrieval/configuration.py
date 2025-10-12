@@ -1,3 +1,5 @@
+# Adapted from LangChain (MIT License) – see LICENSE.langchain
+
 import os
 import logging
 from enum import Enum
@@ -73,8 +75,8 @@ class Configuration:
     recursion_limit: int = 30  # Maximum recursion limit for the search
     search_api: SearchAPI = SearchAPI.SEARXNG
 
-    supervisor_model: str = os.getenv("SUPERVISOR_MODEL", "openai:gpt-4.1-mini")  # Model for supervisor agent
-    researcher_model: str = os.getenv("RESEARCHER_MODEL", "openai:gpt-4.1-mini")  # Model for research agents
+    supervisor_model: str = os.getenv("SUPERVISOR_MODEL", "openai:gpt-4o-mini")  # Model for supervisor agent
+    researcher_model: str = os.getenv("RESEARCHER_MODEL", "openai:gpt-4o-mini")  # Model for research agents
 
     @classmethod
     def from_runnable_config(
