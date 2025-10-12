@@ -1,13 +1,11 @@
-# Agentic Retrieval for Radiology QA (AgenticRAG)
+# Multi-step retrieval and reasoning improves radiology question answering with large language models (RaR)
 
 ## Overview
 
-This is the official repository of the paper **Agentic large language models improve retrieval-based radiology question answering**.  
-Preprint version: [insert URL].
+This is the official repository of the paper **Multi-step retrieval and reasoning improves radiology question answering with large language model**.  
+Preprint version: [https://arxiv.org/abs/2508.00743].
 
-This work builds on the LangChain **Open Deep Research** pipeline, leveraging its multi-agent/state-graph orchestration as a foundation and adapting it for agentic retrieval in radiology QA. Original project: https://github.com/langchain-ai/deep-research
-
-AgenticRAG is an open-source, multi-agent retrieval-augmented generation (RAG) pipeline designed for evidence-grounded radiology question answering. It orchestrates a **supervisor–researcher** workflow where the supervisor decomposes a clinical question into diagnostic sections, assigns each to a research agent, and then synthesizes an unbiased, structured report. Retrieval is iterative and targeted, improving factual grounding and diagnostic accuracy over conventional single-step RAG. This repository contains the implementation, tooling, and orchestration for the pipeline described in the accompanying paper.
+Radiology Retrieval and Reasoning (RaR) is an open-source, multi-agent retrieval-augmented generation (RAG) pipeline designed for evidence-grounded radiology question answering. It orchestrates a **supervisor–researcher** workflow where the supervisor decomposes a clinical question into diagnostic sections, assigns each to a research agent, and then synthesizes an unbiased, structured report. Retrieval is iterative and targeted, improving factual grounding and diagnostic accuracy over conventional single-step RAG. This repository contains the implementation, tooling, and orchestration for the pipeline described in the accompanying paper.
 
 Briefly, the system:
 - Decomposes radiology questions into diagnostic options.
@@ -24,14 +22,14 @@ Briefly, the system:
 - **Robust Persistence**: Incremental NDJSON streaming with consolidation to avoid recomputation on interruptions.
 
 ![Workflow overview](./figure.png)  
-*Figure 1: AgenticRAG pipeline overview.*
+*Figure 1: RaR pipeline overview.*
 
 ## Quickstart
 
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/sopajeta/agentic-retrieval.git
+git clone https://github.com/sopajeta/RaR.git
 cd agentic-retrieval
 uv venv # On Windows: python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
@@ -152,12 +150,7 @@ Supported model prefixes (via `utils.init_chat_model`):
 
 Ensure the selected models support tool/function calling; structured output generation depends on it.
 
-## Paper / Context
-
-This repository implements the system described in:
-
-> **Agentic large language models improve retrieval-based radiology question answering**  
-> Sebastian Wind, Jeta Sopa, Daniel Truhn, Mahshad Lotfinia, Tri-Thien Nguyen, Keno Bressem, Lisa Adams, Mirabela Rusu, Harald Köstler, Gerhard Wellein, Andreas Maier, Soroosh Tayebi Arasteh. Preprint. [Insert DOI or publication details when available.]
+This work builds on the LangChain **Open Deep Research** pipeline, leveraging its multi-agent/state-graph orchestration as a foundation and adapting it for multi-step retrieval and reasoning in radiology QA. Original project: https://github.com/langchain-ai/deep-research
 
 ## Citation
 
@@ -165,12 +158,14 @@ If you use this repository, please also cite the related work:
 
 **AgenticRAG**  
 ```bibtex
-@article{agenticrag2025,
-  author = {Wind, Sebastian and Sopa, Jeta and Truhn, Daniel and Lotfinia, Mahshad and Nguyen, Tri-Thien and Bressem, Keno and Adams, Lisa and Rusu, Mirabela and Köstler, Harald and Wellein, Gerhard and Maier, Andreas and Tayebi Arasteh, Soroosh},
-  title = {Agentic large language models improve retrieval-based radiology question answering},
-  year = {2025},
-  journal = {Preprint},
-  doi = {<insert DOI when available>}
+@misc{wind2025agenticlargelanguagemodels,
+      title={Agentic large language models improve retrieval-based radiology question answering}, 
+      author={Sebastian Wind and Jeta Sopa and Daniel Truhn and Mahshad Lotfinia and Tri-Thien Nguyen and Keno Bressem and Lisa Adams and Mirabela Rusu and Harald Köstler and Gerhard Wellein and Andreas Maier and Soroosh Tayebi Arasteh},
+      year={2025},
+      eprint={2508.00743},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2508.00743}, 
 }
 ```
 
