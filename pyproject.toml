@@ -1,10 +1,9 @@
 [project]
-name = "agentic-retrieval"
+name = "Radiology Retrieval and Reasoning"
 version = "0.0.15"
-description = "Planning, research, and report generation."
-authors = [{ name = "Lance Martin" }]
+description = "Report generation for multiple choice questions for radiology"
+authors = [{ name = "Jeta Sopa" }]
 readme = "README.md"
-license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.10"
 dependencies = [
