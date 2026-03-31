@@ -1,5 +1,5 @@
 [project]
-name = "Radiology Retrieval and Reasoning"
+name = "RadiologyRetrievalAndReasoning"
 version = "0.0.15"
 description = "Report generation for multiple choice questions for radiology"
 authors = [{ name = "Jeta Sopa" }]
@@ -16,7 +16,7 @@ dependencies = [
     "langchain-groq>=0.2.4",
     "requests>=2.32.3",
     "langchain-deepseek>=0.1.2",
-    "python-dotenv==1.0.1",
+    "python-dotenv",
     "langgraph_supervisor",
     "pytest",
     "httpx>=0.24.0",
